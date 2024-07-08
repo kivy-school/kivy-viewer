@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "kivy-viewer"
+version = "0.1.0"
+description = ""
+authors = ["filipemarch <filipe.marchesini@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+kivy-widgets = "^0.1.40"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
