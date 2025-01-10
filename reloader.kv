@@ -1,3 +1,40 @@
 BoxLayout:
-    Button:
-        text: 'Hello World'
+	orientation: "vertical"
+	canvas.before: 
+		Color:
+			rgba: 1,1,1,1
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	ColoredBox:
+		bg_color: 1,0,0,1
+		size_hint: 1,None
+		height: dp(72)
+	ColoredBox:
+		bg_color: 0,1,0,1
+		size_hint: 1,None
+		height: dp(346)
+	ColoredBox:
+		bg_color: 0,0,1,1
+		orientation: "vertical"
+		padding: dp(16),dp(48),dp(16),dp(60)
+		size_hint: 1,None
+		height: dp(48+107+60) #bottom of guy image + text height + padding
+		ColoredBox:
+			bg_color: 1,0,0,1
+			
+	ColoredBox:
+		bg_color: 0,1,1,1
+		padding: dp(16),dp(0),dp(16),dp(105-34) #total height - home indicator
+		ColoredBox:
+			bg_color: 1,0,0,1
+
+<ColoredBox@BoxLayout>:
+	bg_color: 1,1,1,1
+	canvas.before: 
+		Color:
+			rgba: self.bg_color
+		Rectangle:
+			pos: self.pos
+			size: self.size
+

@@ -5,6 +5,7 @@ from kivy.factory import Factory as F
 from kivy.lang import Builder
 import kivy_widgets
 Window.always_on_top = True
+Window.size = 393, 852-86
 
 kv = Builder.load_string("""
 #:import KivyLexer kivy.extras.highlight.KivyLexer
@@ -16,33 +17,21 @@ BoxLayout:
     id: reactive_layout
     reloader: reloader
     language_box: language_box
-    orientation: 'vertical' if self.width < self.height else 'horizontal'
 
-    Splitter:
-        id: editor_pane
-        max_size: (reactive_layout.height if self.vertical else \
-                         reactive_layout.width) - self.strip_size
-        min_size: dp(30) + self.strip_size
-        vertical: 1 if reactive_layout.width < reactive_layout.height else 0
-        sizable_from: 'bottom' if self.vertical else 'right'
-        size_hint: (1, None) if self.vertical else (None, 1)
-        size: dp(400), dp(400)
-        on_vertical:
-            mid_size = self.max_size/2
-            if args[1]: self.height = mid_size
-            if not args[1]: self.width = mid_size
-        ScrollView:
-            id: sv
-            effect_cls: "ScrollEffect"
-            CodeInput:
-                id: language_box
-                auto_indent: True
-                lexer: KivyLexer()
-                size_hint: 1, None
-                height: max(sv.height, self.minimum_height)
-                valign: "top"
-                text: ""
-                on_text: app.schedule_reload(self.text)
+    ScrollView:
+        id: sv
+        effect_cls: "ScrollEffect"
+        size_hint_x: None
+        width: 0
+        CodeInput:
+            id: language_box
+            auto_indent: True
+            lexer: KivyLexer()
+            size_hint: 1, None
+            height: max(sv.height, self.minimum_height)
+            valign: "top"
+            text: ""
+            on_text: app.schedule_reload(self.text)
     Screen:
         id: reloader
 """)
