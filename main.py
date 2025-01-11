@@ -5,7 +5,7 @@ from kivy.factory import Factory as F
 from kivy.lang import Builder
 import kivy_widgets
 Window.always_on_top = True
-Window.size = 393, 852-86
+Window.size = 390, 852-86
 
 kv = Builder.load_string("""
 #:import KivyLexer kivy.extras.highlight.KivyLexer
