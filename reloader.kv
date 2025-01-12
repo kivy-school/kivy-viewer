@@ -9,7 +9,7 @@ BoxLayout:
 	ColoredBox:
 		orientation: "horizontal"
 		ColoredBox:
-			bg_color: 1,0,1,1
+			bg_color: 1,0,1,0
 			size_hint: None, 1
 			width: dp(16+24)
 			padding: dp(16)
@@ -22,7 +22,7 @@ BoxLayout:
 					Color:
 						rgba: rgba("333333")
 					Line:
-						points: [self.pos[0]+dp(7), self.pos[1]+dp(6)+dp(12), self.pos[0]+dp(1), self.pos[1]+dp(6)+dp(6), self.pos[0]+dp(7), self.pos[1]+dp(6)]
+						points: [self.pos[0]+dp(7), self.pos[1]+dp(6)+dp(12)+dp(8), self.pos[0]+dp(1), self.pos[1]+dp(6)+dp(6)+dp(8), self.pos[0]+dp(7), self.pos[1]+dp(6)+dp(8)]
 						width: 1.2
 		ColoredBox:
 			bg_color: 0,0,1,0
@@ -33,7 +33,7 @@ BoxLayout:
 			font_size: dp(22)
 			pos_hint: None, None
 			pos_hint: {'x': 0.5}
-			halighn: "center"
+			halign: "center"
 		ColoredBox:
 			bg_color: 1,0,1,0
 			size_hint: None, None
