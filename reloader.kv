@@ -43,7 +43,6 @@ BoxLayout:
 		size_hint: 1,None
 		height: dp(714-34)
 		orientation: "vertical"
-		#logos_google-icon.png
 		canvas.before: 
 			Color:
 				rgba: 0, 0, 0, 0.08
@@ -62,7 +61,7 @@ BoxLayout:
 				blur_radius: 8
 				# Define the shadow blur radius. Controls shadow expansion and softness.
 
-		canvas.after:
+		canvas:
 			Color:
 				rgba: 1, 1, 1, 1
 			RoundedRectangle:
@@ -71,10 +70,13 @@ BoxLayout:
 				radius: [dp(40),dp(40),dp(0), dp(0)]
 		ColoredBox:
 			bg_color: 1,0,0,0
+		#logos_google-icon.png
+			
 		ColoredBox:
 			bg_color: 0,1,0,0
 		ColoredBox:
 			bg_color: 0,0,1,0
+		
 
 <ColoredBox@BoxLayout>:
 	bg_color: 1,1,1,1
