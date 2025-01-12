@@ -11,15 +11,26 @@ BoxLayout:
 		ColoredBox:
 			bg_color: 1,0,1,1
 			size_hint: None, 1
-			size: dp(20), dp(10)
+			width: dp(16+24)
+			padding: dp(20)
+			ColoredBox:
+				bg_color: 0,1,1,1
+				size_hint: None, None
+				pos_hint: {"center_y": 0.5}
+				size: dp(24), dp(24)
+				canvas.after: 
+					Color:
+						rgba: rgba("333333")
+					Line:
+						points: [self.pos[0]+dp(7), self.pos[1]+dp(6)+dp(12)]
 		ColoredBox:
 			bg_color: 0,0,1,1
 	ColoredBox:
 		bg_color: rgba("FFFFFF")
 		size_hint: 1,None
-		height: dp(714)
+		height: dp(714-34)
 		orientation: "vertical"
-			# logos_google-icon.png
+		#logos_google-icon.png
 		ColoredBox:
 			bg_color: 1,0,0,1
 		ColoredBox:
