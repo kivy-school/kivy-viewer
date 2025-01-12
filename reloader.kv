@@ -2,116 +2,30 @@ BoxLayout:
 	orientation: "vertical"
 	canvas.before: 
 		Color:
-			rgba: rgba("0A0716")
+			rgba: rgba("FBFBFB")
 		Rectangle:
 			pos: self.pos
 			size: self.size
-	
 	ColoredBox:
-		bg_color: 1,0,0,0
+		orientation: "horizontal"
+		ColoredBox:
+			bg_color: 1,0,1,1
+			size_hint: None, 1
+			size: dp(20), dp(10)
+		ColoredBox:
+			bg_color: 0,0,1,1
+	ColoredBox:
+		bg_color: rgba("FFFFFF")
 		size_hint: 1,None
-		height: dp(72)
-		padding: dp(310), dp(0), dp(0), dp(0)
-		LabelB:
-			text: "Skip"
-			size_hint: (None, 1)
-			bg_color: 0,0,1,0
-			canvas.before: 
-				Color:
-					rgba: self.bg_color
-				Rectangle:
-					pos: self.pos
-					size: self.size
-	
-	ColoredBox:
-		bg_color: 0,1,0,0
-		size_hint: 1,None
-		height: dp(346)
-		Image:
-			source: "images/Group 242.png"
-			fit_mode: "cover"
-	
-	ColoredBox:
-		bg_color: 0,0,1,0
+		height: dp(714)
 		orientation: "vertical"
-		padding: dp(16),dp(48),dp(16),dp(60)
-		size_hint: 1,None
-		height: dp(48+107+60) #bottom of guy image + text height + padding
+			# logos_google-icon.png
 		ColoredBox:
-			bg_color: 1,0,0,0
-			orientation: "vertical"
-			LabelB:
-				text: "[b]Find petcare around\nyour location[/b]"
-				markup: True
-				font_size: dp(24)
-				halign: "center"
-			LabelB:
-				text: "Just turn on your location and you will find\nthe nearest pet care you wish."
-				font_size: dp(15)
-				opacity: 0.55 
-				halign: "center"
-			
-	ColoredBox:
-		bg_color: 0,1,1,0
-		padding: dp(16),dp(0),dp(16),dp(105-34) #total height - home indicator
+			bg_color: 1,0,0,1
 		ColoredBox:
-			bg_color: 1,0,0,0
-			# padding: dp(296), dp(0), dp(0), dp(0)
-			ColoredBox:
-				bg_color: 1,0,1,0
-				size_hint: None, None
-				size: dp(41), dp(62)
-				canvas.before: 
-					Color:
-						rgba: rgba("BDBDBD")
-					SmoothRoundedRectangle:
-						pos: [self.pos[0],self.pos[1]+self.height/2]
-						size: dp(4), dp(4)
-						radius: [dp(4)]
-					SmoothRoundedRectangle:
-						pos: [self.pos[0]+dp(29),self.pos[1]+self.height/2]
-						size: dp(4), dp(4)
-						radius: [dp(4)]
-					SmoothRoundedRectangle:
-						pos: [self.pos[0]+dp(37),self.pos[1]+self.height/2]
-						size: dp(4), dp(4)
-						radius: [dp(4)]
-				canvas.after: 
-					Color:
-						rgba: rgba("FFFFFF")
-					SmoothRoundedRectangle:
-						pos: [self.pos[0]+dp(8),self.pos[1]+self.height/2]
-						size: dp(17), dp(4)
-						radius: [dp(5)]
-			ColoredBox:
-				bg_color: 1,1,1,0
-				size_hint: None, None
-				size: dp(255), dp(62)
-			ColoredBox:
-				bg_color: 1,1,1,0
-				ellipse_color: 1,1,1,1
-				size_hint: None, None
-				size: dp(62), dp(62)
-				canvas.before: 
-					Color:
-						rgba: self.ellipse_color
-					Ellipse:
-						pos: self.pos
-						size: self.size
-				canvas.after: 
-					Color:
-						rgba: rgba("333333")
-					Line:
-						#points: [100, 200, 200, 200, 180, 220, 200, 200, 180, 180]  
-						points: [self.pos[0]+dp(19)+dp(5), self.pos[1]+(self.height/2), self.pos[0]+dp(19)+dp(5)+dp(14), self.pos[1]+(self.height/2), self.pos[0]+dp(19)+dp(5)+dp(7), self.pos[1]+(self.height/2)+dp(7), self.pos[0]+dp(19)+dp(5)+dp(14), self.pos[1]+(self.height/2), self.pos[0]+dp(19)+dp(5)+dp(7), self.pos[1]+(self.height/2)-dp(7)]  
-						width: 1.2
-						cap: 'round'
-						joint: 'round'
-					
-
-
-
-
+			bg_color: 0,1,0,1
+		ColoredBox:
+			bg_color: 0,0,1,1
 
 <ColoredBox@BoxLayout>:
 	bg_color: 1,1,1,1
