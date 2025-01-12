@@ -44,12 +44,37 @@ BoxLayout:
 		height: dp(714-34)
 		orientation: "vertical"
 		#logos_google-icon.png
+		canvas.before: 
+			Color:
+				rgba: 0, 0, 0, 0.08
+			BoxShadow:
+				pos: self.pos
+				size: self.size
+				offset: 0, 2
+				# Specifies shadow offsets in (horizontal, vertical) format. Positive values for the offset indicate that the shadow should move to the right and/or top. The negative ones indicate that the shadow should move to the left and/or down.
+				
+				spread_radius: -4, -4
+				# Define the shrink/expansion of the shadow.
+
+				border_radius: dp(30),dp(30),dp(0),dp(0)
+				# Specifies the radii used for the rounded corners clockwise: top-left, top-right, bottom-right, bottom-left.
+
+				blur_radius: 8
+				# Define the shadow blur radius. Controls shadow expansion and softness.
+
+		canvas.after:
+			Color:
+				rgba: 1, 1, 1, 1
+			RoundedRectangle:
+				pos: self.pos
+				size: self.size
+				radius: [dp(40),dp(40),dp(0), dp(0)]
 		ColoredBox:
-			bg_color: 1,0,0,1
+			bg_color: 1,0,0,0
 		ColoredBox:
-			bg_color: 0,1,0,1
+			bg_color: 0,1,0,0
 		ColoredBox:
-			bg_color: 0,0,1,1
+			bg_color: 0,0,1,0
 
 <ColoredBox@BoxLayout>:
 	bg_color: 1,1,1,1
