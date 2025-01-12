@@ -52,15 +52,37 @@ BoxLayout:
 				halign: "center"
 			
 	ColoredBox:
-		bg_color: 0,1,1,1
+		bg_color: 0,1,1,0
 		padding: dp(16),dp(0),dp(16),dp(105-34) #total height - home indicator
 		ColoredBox:
-			bg_color: 1,0,0,1
+			bg_color: 1,0,0,0
 			# padding: dp(296), dp(0), dp(0), dp(0)
 			ColoredBox:
-				bg_color: 1,0,1,1
+				bg_color: 1,0,1,0
 				size_hint: None, None
 				size: dp(41), dp(62)
+				canvas.before: 
+					Color:
+						rgba: rgba("BDBDBD")
+					SmoothRoundedRectangle:
+						pos: [self.pos[0],self.pos[1]+self.height/2]
+						size: dp(4), dp(4)
+						radius: [dp(4)]
+					SmoothRoundedRectangle:
+						pos: [self.pos[0]+dp(29),self.pos[1]+self.height/2]
+						size: dp(4), dp(4)
+						radius: [dp(4)]
+					SmoothRoundedRectangle:
+						pos: [self.pos[0]+dp(37),self.pos[1]+self.height/2]
+						size: dp(4), dp(4)
+						radius: [dp(4)]
+				canvas.after: 
+					Color:
+						rgba: rgba("FFFFFF")
+					SmoothRoundedRectangle:
+						pos: [self.pos[0]+dp(8),self.pos[1]+self.height/2]
+						size: dp(17), dp(4)
+						radius: [dp(5)]
 			ColoredBox:
 				bg_color: 1,1,1,0
 				size_hint: None, None
