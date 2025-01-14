@@ -1,272 +1,261 @@
 BoxLayout:
-	orientation: "vertical"
-	canvas.before: 
-		Color:
-			rgba: rgba("FBFBFB")
-		Rectangle:
-			pos: self.pos
-			size: self.size
-	ColoredBox:
-		orientation: "horizontal"
-		ColoredBox:
-			bg_color: 1,0,1,0
-			size_hint: None, 1
-			width: dp(16+24)
-			padding: dp(16)
-			ColoredBox:
-				bg_color: 0,1,1,0
-				size_hint: None, None
-				pos_hint: {"center_y": 0.5}
-				size: dp(24), dp(24)
-				canvas.after: 
-					Color:
-						rgba: rgba("333333")
-					Line:
-						points: [self.pos[0]+dp(7), self.pos[1]+dp(6)+dp(12)+dp(8), self.pos[0]+dp(1), self.pos[1]+dp(6)+dp(6)+dp(8), self.pos[0]+dp(7), self.pos[1]+dp(6)+dp(8)]
-						width: 1.2
-		ColoredBox:
-			bg_color: 0,0,1,0
-		LabelB: 
-			text: "Google LLC"
-			font_name: "fonts//Roboto-Medium.ttf"
-			color: rgba("333333")
-			font_size: dp(22)
-			pos_hint: None, None
-			pos_hint: {'x': 0.5}
-			halign: "center"
-		ColoredBox:
-			bg_color: 1,0,1,0
-			size_hint: None, None
-			size: ((((self.parent.size[0])-dp(16+24))/3) +((+dp(16)+dp(24))/2), self.parent.size[1])
-	ColoredBox:
-		bg_color: rgba("FFFFFF")
-		size_hint: 1,None
-		height: dp(714-34)
-		orientation: "vertical"
-		canvas.before: 
-			Color:
-				rgba: 0, 0, 0, 0.08
-			BoxShadow:
-				pos: self.pos
-				size: self.size
-				offset: 0, 2
-				# Specifies shadow offsets in (horizontal, vertical) format. Positive values for the offset indicate that the shadow should move to the right and/or top. The negative ones indicate that the shadow should move to the left and/or down.
-				
-				spread_radius: -4, -4
-				# Define the shrink/expansion of the shadow.
+    orientation: "vertical"
+    padding: 0, dp(22), 0, 0
 
-				border_radius: dp(30),dp(30),dp(0),dp(0)
-				# Specifies the radii used for the rounded corners clockwise: top-left, top-right, bottom-right, bottom-left.
+    canvas.before: 
+        Color:
+            rgba: rgba("FBFBFB")
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
-				blur_radius: 8
-				# Define the shadow blur radius. Controls shadow expansion and softness.
+    ColoredBox:
+        orientation: "horizontal"
+        size_hint: 1, None
+        height: dp(64)
+        padding: dp(16), 0, 0, dp(38)
+        # bg_color: 1,0,1,1
+        Image:
+            source: "images/chevron-left.png"
+            size_hint: None, None
+            size: dp(24), dp(24)
+            pos_hint: {"center_y": 0.5}
+        Widget:
+        Label: 
+            text: "Google LLC"
+            font_name: "fonts/Roboto-Medium"
+            color: rgba("333333")
+            font_size: dp(22)
+            size_hint: None, None
+            size: dp(111), dp(26)
+        Widget:
 
-		canvas:
-			Color:
-				rgba: 1, 1, 1, 1
-			RoundedRectangle:
-				pos: self.pos
-				size: self.size
-				radius: [dp(40),dp(40),dp(0), dp(0)]
-		ColoredBox:
-			bg_color: 1,0,0,0
-			size_hint: 1,None
-			height: dp(8+3) 
-			canvas:
-				Color:
-					rgba: rgba("F5F5F7")
-				RoundedRectangle:
-					pos: [self.pos[0]+(self.width/2)-dp(30),self.pos[1]]
-					size: [dp(60),dp(3)]
-					radius: [dp(2),dp(2),dp(2), dp(2)]
-		ColoredBox:
-			bg_color: 0,1,0,0
-			size_hint: 1,None
-			height: dp(42+50) 
-			padding: [0, dp(50), 0, 0]
-			Image:
-				source: "images\\logos_google-icon.png"
-				size: [dp(42),dp(42)]
-				#pos: [self.pos[0],self.pos[1]]
-				#pos: self.pos
-		ColoredBox:
-			bg_color: 0,0,1,0
-			size_hint: 1,None
-			height: dp(40+72)
-			orientation: "vertical" 
-			padding: [0, dp(40), 0, 0]
-			LabelB:
-				text: "UX/UI Designer"
-				color: rgba("333333")
-				font_name: "fonts//Roboto-Medium.ttf"
-				font_size: dp(34)
-			LabelB:
-				text: "New York, NY"
-				color: rgba("828282")
-				font_size: dp(17)
-		ColoredBox:
-			bg_color: 1,0,0,0
-			size_hint: 1,None
-			height: dp(40+20)
-			ColoredBox:
-				bg_color: 1,0,1,0
-				size_hint: 1,None
-				height: dp(40+20)
-				#padding: [dp(80), dp(0), dp(0), dp((60-38)/2)] 
-				padding: [dp(80), dp(0), dp(0), dp(0)] 
-				LabelB:
-					text: "Part-Time"
-					font_name: "fonts//Roboto-Medium.ttf"
-					color: rgba("333333")
-					font_size: dp(15)
-					size_hint: None, None
-					size: dp(107),dp(38)
-					canvas.before: 
-						Color:
-							rgba: rgba("F5F5F5")
-						SmoothRoundedRectangle:
-							pos: self.pos
-							size: self.size
-							radius: [dp(5)]
-			ColoredBox:
-				bg_color: 0,0,1,0
-				size_hint: 1,None
-				height: dp(40+20)
-				#padding: [dp(0), dp(0), dp(80-15), dp(0)]
-				padding: [dp(0), dp(20), dp(80-15), dp(0)]
-				LabelB:
-					text: "$45/h"
-					color: rgba("333333")
-					font_size: dp(34)
-					font_name: "fonts//Roboto-Light.ttf"
-					canvas.before: 
-						Color:
-							rgba: 0,0,1,0
-						Rectangle:
-							pos: self.pos
-							size: self.size
-		ColoredBox:
-			bg_color: 0,1,0,0
-			orientation: "vertical"
-			padding: [dp(0),dp(40),dp(0),dp(0)]
-			size_hint: 1,None
-			height: dp(230+40)
-			ColoredBox:
-				bg_color: 1,0,0,0
-				padding: [dp(37),dp(0),dp(0),dp(0)]
-				size_hint: 1,None
-				height: dp(32)
-				LabelB:
-					text: "Requirements"
-					color: rgba("333333")
-					font_size: dp(22)
-					font_name: "fonts//Roboto-Medium.ttf"
-					text_size: self.size
-					halign: 'left'
-					valign: 'top'
-					canvas.before: 
-						Color:
-							rgba: 0,0,1,0
-						Rectangle:
-							pos: self.pos
-							size: self.size
-			ColoredBox:
-				bg_color: 0,1,1,0
-				padding: [dp(5),dp(0),dp(61),dp(0)]
-				LabelB:
-					text: "\u2022"
-					color: rgba("333333")
-					font_size: dp(34)
-					font_name: "fonts//Roboto-Light.ttf"
-					size_hint: None, None
-					width: dp(37+6)
-					height: dp(60)
-					text_size: self.size
-					halign: 'right'
-					valign: 'top'
-					canvas.before: 
-						Color:
-							rgba: 1,0,1,0
-						Rectangle:
-							pos: self.pos
-							size: self.size
-				LabelB:
-					text: "Exceptional communication skills and \nteam-work skills"
-					color: rgba("828282")
-					font_size: dp(15)
-			ColoredBox:
-				bg_color: 0,1,1,0
-				padding: [dp(5),dp(0),dp(71),dp(24)]
-				LabelB:
-					text: "\u2022"
-					color: rgba("333333")
-					font_size: dp(34)
-					font_name: "fonts//Roboto-Light.ttf"
-					size_hint: None, None
-					width: dp(37+6)
-					height: dp(50)
-					text_size: self.size
-					text_pos: self.pos
-					halign: 'right'
-					valign: 'top'
-					canvas.before: 
-						Color:
-							rgba: 1,0,0,0
-						Rectangle:
-							pos: self.pos
-							size: self.size
-				LabelB:
-					text: "Know the principles of animation and\nyou can create high fidelity prototype"
-					color: rgba("828282")
-					font_size: dp(15)
-					canvas.before: 
-						Color:
-							rgba: 1,0,1,0
-						Rectangle:
-							pos: self.pos
-							size: self.size
-			ColoredBox:
-				bg_color: 1,0,1,0
-				padding: [dp(5),dp(0),dp(50),dp(0)]
-				LabelB:
-					text: "\u2022"
-					color: rgba("333333")
-					font_size: dp(34)
-					font_name: "fonts//Roboto-Light.ttf"
-					size_hint: None, None
-					width: dp(37+6)
-					height: dp(82)
-					text_size: self.size
-					halign: 'right'
-					valign: 'top'
-					canvas.before: 
-						Color:
-							rgba: 0,1,0,0
-						Rectangle:
-							pos: self.pos
-							size: self.size
-				LabelB:
-					text: "Direct experience using Adobe Premiere,\nAdobe After Effects & other tools used to\ncreate videos, animations, etc.\nGood UX/UI knowledge."
-					color: rgba("828282")
-					font_size: dp(15)
-		ColoredBox:
-			bg_color: 0,0,1,0
-			LabelB:
-				text: "Apply Now"
-				color: rgba("FFFFFF")
-				font_size: dp(17)
-				font_name: "fonts//Roboto-Medium.ttf"
-				text_size: self.size
-				halign: 'center'
-				valign: 'center'
-				canvas.before: 
-					Color:
-						rgba: rgba("FA3C3C")
-					SmoothRoundedRectangle:
-						pos: [self.pos[0]+dp(16),self.pos[1]+dp(38)]
-						size: [dp(358),dp(60)]
-						radius: [dp(10)]
-		
+    ColoredBox:
+        bg_color: rgba("FFFFFF")
+        size_hint: 1,None
+        height: dp(714)
+        orientation: "vertical"
+        
+        # canvas.before: 
+        #     Color:
+        #         rgba: 0, 0, 0, 0.08
+        #     BoxShadow:
+        #         pos: self.pos
+        #         size: self.size
+        #         offset: 0, 2
+        #         # Specifies shadow offsets in (horizontal, vertical) format. Positive values for the offset indicate that the shadow should move to the right and/or top. The negative ones indicate that the shadow should move to the left and/or down.
+                
+        #         spread_radius: -4, -4
+        #         # Define the shrink/expansion of the shadow.
+
+        #         border_radius: dp(30),dp(30),dp(0),dp(0)
+        #         # Specifies the radii used for the rounded corners clockwise: top-left, top-right, bottom-right, bottom-left.
+
+        #         blur_radius: 8
+        #         # Define the shadow blur radius. Controls shadow expansion and softness.
+
+        canvas:
+            Color:
+                rgba: 1, 1, 1, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [dp(40),dp(40),dp(0), dp(0)]
+
+        canvas.after:
+            Color:
+                rgba: 0, 0, 0, .08
+            SmoothLine:
+                width: dp(1)
+                rounded_rectangle: self.x, self.y, self.width, self.height, dp(40)
+
+        ColoredBox:
+            # bg_color: 1,0,0,1
+            size_hint: 1,None
+            height: dp(8+3) 
+            canvas:
+                Color:
+                    rgba: rgba("F5F5F7")
+                RoundedRectangle:
+                    pos: [self.pos[0]+(self.width/2)-dp(30),self.pos[1]]
+                    size: [dp(60),dp(3)]
+                    radius: [dp(2)]
+
+        ColoredBox:
+            # bg_color: 0,.7,0,1
+            size_hint: 1,None
+            height: dp(42+50+40) 
+            padding: [0, dp(50), 0, dp(40)]
+            Image:
+                source: 'images/logos_google-icon.png'
+                size: [dp(42),dp(42)]
+
+        ColoredBox:
+            # bg_color: 0,0,.5,1
+            size_hint: 1,None
+            height: dp(72)
+            orientation: "vertical" 
+            Label:
+                text: "UX/UI Designer"
+                color: rgba("333333")
+                font_name: "fonts/Roboto-Medium"
+                font_size: dp(34)
+                size_hint_y: None
+                height: dp(40)
+            Widget:
+            Label:
+                text: "New York, NY"
+                color: rgba("828282")
+                font_size: dp(17)
+                size_hint_y: None
+                height: dp(20)
+
+        ColoredBox:
+            # bg_color: 1,0,0,1
+            size_hint: None, None
+            width: dp(230)
+            height: dp(40+20)
+            pos_hint: {"center_x": .5}
+
+            Label:
+                text: "Part-Time"
+                font_name: "fonts/Roboto-Medium"
+                color: rgba("333333")
+                font_size: dp(15)
+                size_hint: None, None
+                size: dp(107),dp(38)
+                canvas.before: 
+                    Color:
+                        rgba: rgba("F5F5F5")
+                    SmoothRoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [dp(5)]
+            Widget:
+            Label:
+                size_hint: None, None
+                size: dp(88), dp(40)
+                text: "$45/h"
+                color: rgba("333333")
+                font_size: dp(34)
+                font_name: "fonts/Roboto-Light"
+                canvas.before: 
+                    Color:
+                        rgba: 0,0,1,0
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+        ColoredBox:
+            # bg_color: 0,1,0,1
+            orientation: "vertical"
+            padding: dp(37),dp(40), dp(61), 0
+            size_hint: None, None
+            width: dp(292+37+61)
+            height: dp(230+40)
+            pos_hint: {"center_x": .5}
+            spacing: dp(20)
+
+            Label:
+                text: "Requirements"
+                color: rgba("333333")
+                font_size: dp(22)
+                font_name: "fonts/Roboto-Medium"
+                size_hint: None, None
+                size: dp(135), dp(26)
+
+                # canvas.before: 
+                #     Color:
+                #         rgba: 0,0,1,1
+                #     Rectangle:
+                #         pos: self.pos
+                #         size: self.size
+
+            Label:
+                text: "Exceptional communication skills and\nteam-work skills"
+                padding: dp(24), 0, 0, 0
+                color: rgba("828282")
+                font_size: dp(15)
+                size_hint: None, None
+                size: dp(268), dp(36)
+
+                canvas.before: 
+                    Color:
+                        rgba: rgba("#333333")
+                    SmoothEllipse:
+                        pos: self.pos[0], self.pos[1]+dp(24)
+                        size: dp(6), dp(6)
+                    # RoundedRectangle:
+                    #     pos: self.pos
+                    #     size: self.size
+
+            Label:
+                text: "Know the principles of animation and\nyou can create high fidelity prototype"
+                padding: dp(24), 0, 0, 0
+                color: rgba("828282")
+                font_size: dp(15)
+                size_hint: None, None
+                size: dp(268), dp(36)
+
+                canvas.before: 
+                    Color:
+                        rgba: rgba("#333333")
+                    SmoothEllipse:
+                        pos: self.pos[0], self.pos[1]+dp(24)
+                        size: dp(6), dp(6)
+                    # RoundedRectangle:
+                    #     pos: self.pos
+                    #     size: self.size
+                        
+            Label:
+                text: "Direct experience using Adobe Premiere,\nAdobe After Effects & other tools used to\ncreate videos, animations, etc.\nGood UX/UI knowledge."
+                padding: dp(24), 0, 0, 0
+                color: rgba("828282")
+                font_size: dp(15)
+                size_hint: None, None
+                size: dp(292), dp(72)
+
+                canvas.before: 
+                    Color:
+                        rgba: rgba("#333333")
+                    SmoothEllipse:
+                        pos: self.pos[0], self.top - dp(12)
+                        size: dp(6), dp(6)
+                    # RoundedRectangle:
+                    #     pos: self.pos
+                    #     size: self.size
+
+            # Widget:
+        
+        ColoredBox:
+            bg_color: 0,0,1,0
+            padding: dp(16), dp(50), dp(16), 0
+            size_hint_y: None
+            height: dp(110)
+            orientation: 'vertical'
+
+            Button:
+                text: "Apply Now"
+                size_hint: None, None
+                size: dp(358), dp(60)
+                color: rgba("FFFFFF")
+                font_size: dp(17)
+                font_name: "fonts/Roboto-Medium.ttf"
+                background_color: 0, 0, 0, 0
+                pos_hint: {"center_x": .5}
+
+                canvas.before: 
+                    Color:
+                        rgba: rgba("FA3C3C")
+                    SmoothRoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [dp(10)]
+
+        Widget:
+    
+    Widget:
+    
 <ColoredBox@BoxLayout>:
 	bg_color: 1,1,1,1
 	canvas.before: 
@@ -275,10 +264,3 @@ BoxLayout:
 		Rectangle:
 			pos: self.pos
 			size: self.size
-
-<LabelB@Button>:
-	background_normal: ''
-    background_down: ''
-    background_disabled_normal: ''
-    background_disabled_down: ''
-    background_color: 0, 0, 0, 0
