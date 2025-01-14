@@ -68,21 +68,205 @@ BoxLayout:
 				pos: self.pos
 				size: self.size
 				radius: [dp(40),dp(40),dp(0), dp(0)]
-		#logos_google-icon.png
 		ColoredBox:
-			bg_color: 1,0,0,1
+			bg_color: 1,0,0,0
+			size_hint: 1,None
+			height: dp(8+3) 
+			canvas:
+				Color:
+					rgba: rgba("F5F5F7")
+				RoundedRectangle:
+					pos: [self.pos[0]+(self.width/2)-dp(30),self.pos[1]]
+					size: [dp(60),dp(3)]
+					radius: [dp(2),dp(2),dp(2), dp(2)]
 		ColoredBox:
-			bg_color: 0,1,0,1
+			bg_color: 0,1,0,0
+			size_hint: 1,None
+			height: dp(42+50) 
+			padding: [0, dp(50), 0, 0]
+			Image:
+				source: "images\\logos_google-icon.png"
+				size: [dp(42),dp(42)]
+				#pos: [self.pos[0],self.pos[1]]
+				#pos: self.pos
 		ColoredBox:
-			bg_color: 0,0,1,1
+			bg_color: 0,0,1,0
+			size_hint: 1,None
+			height: dp(40+72)
+			orientation: "vertical" 
+			padding: [0, dp(40), 0, 0]
+			LabelB:
+				text: "UX/UI Designer"
+				color: rgba("333333")
+				font_name: "fonts//Roboto-Medium.ttf"
+				font_size: dp(34)
+			LabelB:
+				text: "New York, NY"
+				color: rgba("828282")
+				font_size: dp(17)
 		ColoredBox:
-			bg_color: 1,0,0,1
+			bg_color: 1,0,0,0
+			size_hint: 1,None
+			height: dp(40+20)
+			ColoredBox:
+				bg_color: 1,0,1,0
+				size_hint: 1,None
+				height: dp(40+20)
+				#padding: [dp(80), dp(0), dp(0), dp((60-38)/2)] 
+				padding: [dp(80), dp(0), dp(0), dp(0)] 
+				LabelB:
+					text: "Part-Time"
+					font_name: "fonts//Roboto-Medium.ttf"
+					color: rgba("333333")
+					font_size: dp(15)
+					size_hint: None, None
+					size: dp(107),dp(38)
+					canvas.before: 
+						Color:
+							rgba: rgba("F5F5F5")
+						SmoothRoundedRectangle:
+							pos: self.pos
+							size: self.size
+							radius: [dp(5)]
+			ColoredBox:
+				bg_color: 0,0,1,0
+				size_hint: 1,None
+				height: dp(40+20)
+				#padding: [dp(0), dp(0), dp(80-15), dp(0)]
+				padding: [dp(0), dp(20), dp(80-15), dp(0)]
+				LabelB:
+					text: "$45/h"
+					color: rgba("333333")
+					font_size: dp(34)
+					font_name: "fonts//Roboto-Light.ttf"
+					canvas.before: 
+						Color:
+							rgba: 0,0,1,0
+						Rectangle:
+							pos: self.pos
+							size: self.size
 		ColoredBox:
-			bg_color: 0,1,0,1
+			bg_color: 0,1,0,0
+			orientation: "vertical"
+			padding: [dp(0),dp(40),dp(0),dp(0)]
+			size_hint: 1,None
+			height: dp(230+40)
+			ColoredBox:
+				bg_color: 1,0,0,0
+				padding: [dp(37),dp(0),dp(0),dp(0)]
+				size_hint: 1,None
+				height: dp(32)
+				LabelB:
+					text: "Requirements"
+					color: rgba("333333")
+					font_size: dp(22)
+					font_name: "fonts//Roboto-Medium.ttf"
+					text_size: self.size
+					halign: 'left'
+					valign: 'top'
+					canvas.before: 
+						Color:
+							rgba: 0,0,1,0
+						Rectangle:
+							pos: self.pos
+							size: self.size
+			ColoredBox:
+				bg_color: 0,1,1,0
+				padding: [dp(5),dp(0),dp(61),dp(0)]
+				LabelB:
+					text: "\u2022"
+					color: rgba("333333")
+					font_size: dp(34)
+					font_name: "fonts//Roboto-Light.ttf"
+					size_hint: None, None
+					width: dp(37+6)
+					height: dp(60)
+					text_size: self.size
+					halign: 'right'
+					valign: 'top'
+					canvas.before: 
+						Color:
+							rgba: 1,0,1,0
+						Rectangle:
+							pos: self.pos
+							size: self.size
+				LabelB:
+					text: "Exceptional communication skills and \nteam-work skills"
+					color: rgba("828282")
+					font_size: dp(15)
+			ColoredBox:
+				bg_color: 0,1,1,0
+				padding: [dp(5),dp(0),dp(71),dp(24)]
+				LabelB:
+					text: "\u2022"
+					color: rgba("333333")
+					font_size: dp(34)
+					font_name: "fonts//Roboto-Light.ttf"
+					size_hint: None, None
+					width: dp(37+6)
+					height: dp(50)
+					text_size: self.size
+					text_pos: self.pos
+					halign: 'right'
+					valign: 'top'
+					canvas.before: 
+						Color:
+							rgba: 1,0,0,0
+						Rectangle:
+							pos: self.pos
+							size: self.size
+				LabelB:
+					text: "Know the principles of animation and\nyou can create high fidelity prototype"
+					color: rgba("828282")
+					font_size: dp(15)
+					canvas.before: 
+						Color:
+							rgba: 1,0,1,0
+						Rectangle:
+							pos: self.pos
+							size: self.size
+			ColoredBox:
+				bg_color: 1,0,1,0
+				padding: [dp(5),dp(0),dp(50),dp(0)]
+				LabelB:
+					text: "\u2022"
+					color: rgba("333333")
+					font_size: dp(34)
+					font_name: "fonts//Roboto-Light.ttf"
+					size_hint: None, None
+					width: dp(37+6)
+					height: dp(82)
+					text_size: self.size
+					halign: 'right'
+					valign: 'top'
+					canvas.before: 
+						Color:
+							rgba: 0,1,0,0
+						Rectangle:
+							pos: self.pos
+							size: self.size
+				LabelB:
+					text: "Direct experience using Adobe Premiere,\nAdobe After Effects & other tools used to\ncreate videos, animations, etc.\nGood UX/UI knowledge."
+					color: rgba("828282")
+					font_size: dp(15)
 		ColoredBox:
-			bg_color: 0,0,1,1
+			bg_color: 0,0,1,0
+			LabelB:
+				text: "Apply Now"
+				color: rgba("FFFFFF")
+				font_size: dp(17)
+				font_name: "fonts//Roboto-Medium.ttf"
+				text_size: self.size
+				halign: 'center'
+				valign: 'center'
+				canvas.before: 
+					Color:
+						rgba: rgba("FA3C3C")
+					SmoothRoundedRectangle:
+						pos: [self.pos[0]+dp(16),self.pos[1]+dp(38)]
+						size: [dp(358),dp(60)]
+						radius: [dp(10)]
 		
-
 <ColoredBox@BoxLayout>:
 	bg_color: 1,1,1,1
 	canvas.before: 
